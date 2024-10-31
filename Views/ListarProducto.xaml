@@ -1,0 +1,56 @@
+﻿<Window x:Class="Examen03.Views.ListarProducto"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Examen03.Views"
+        mc:Ignorable="d"
+        Title="ListarProducto" Height="450" Width="800">
+    
+     
+    
+    
+    <Grid>
+
+        <StackPanel>
+            <StackPanel Orientation="Horizontal" Background="Peru">
+                <TextBox Text="{Binding Nombre}" Width="150" Margin="30"></TextBox>
+                <TextBox Text="{Binding Descripcion}" Width="150" Margin="30"></TextBox>
+                <TextBox Text="{Binding Precio}" Width="150" Margin="30"></TextBox>
+            </StackPanel>
+            <StackPanel >
+                <Button Cursor="Pen" Command="{Binding GuardarCommand}"  Width="200" Height="50" Background="Yellow" >Agregar</Button>
+            </StackPanel>
+            <ListView ItemsSource="{Binding Productos}" Background="Aqua" Foreground="Red">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            
+                            <TextBlock Text="PRODUCTOS" HorizontalAlignment="Left" Width="100"></TextBlock>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Nombre" HorizontalAlignment="Left" Width="200" Foreground="Black"></TextBlock>
+                                <TextBlock Text="Descripcion" HorizontalAlignment="Left" Width="200" Foreground="Black"></TextBlock>
+                                <TextBlock Text="Precio" HorizontalAlignment="Left" Width="50" Foreground="Black"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+
+                                <TextBlock Text="{Binding Nombre}"  Width="200" Foreground="blue" FontSize="20"></TextBlock>
+                                <TextBlock Text="{Binding Descripcion}"  Width="200" Foreground="blue" FontSize="20"></TextBlock>
+                                <TextBlock Text="{Binding Precio}"  Width="50" Foreground="green" FontSize="20"></TextBlock>
+                            </StackPanel>
+
+
+                        </StackPanel>
+                    </DataTemplate>
+
+
+                </ListView.ItemTemplate>
+
+
+
+            </ListView>
+
+        </StackPanel>
+
+    </Grid>
+</Window>
